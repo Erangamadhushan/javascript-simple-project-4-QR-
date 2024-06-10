@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>QR Code generate</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="qrcode.js"></script> <!-- Using qrcode.js file -->
+        <style>
+            input {
+                margin:20px;
+                padding:5px;
+                font-size:2rem;
+            }
+            #qrcode {
+                margin-left:30px;
+                
+            }
+            input{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>QR Code generate</h1>
+        <input type="text" name="myInput" id="myInput" style="color:blue;"/>
+        <div id="qrcode"></div>
+        <button type="button" id="downloadBtn">Download</button>
+        <script type="text/javascript">
+            // var qrcode = new QRCode("qrcode", {
+            //     text: "",
+            //     width: 250,
+            //     height: 250,
+            //     colorDark : "#000000",
+            //     colorLight : "#ffffff",
+            //     correctLevel : QRCode.CorrectLevel.H
+            // });
+
+            // let myInput = document.querySelector("#myInput");
+            // myInput.addEventListener("keyup",(e) => {
+            //     console.log(e.key);
+            //     let input = myInput.value;
+            //     qrcode.makeCode(input);
+
+            // })
+            // document.querySelector("#downloadBtn").onclick = () => {
+            //     let img = document.querySelector("#qrcode img");
+            //     let link = document.createElement('a');
+            //     link.href = img.src;
+            //     link.download = "QrCode.png";
+            //     link.click();
+            // }
+            var qrcode = new QRCode("qrcode", {
+                text:"",
+                width:250,
+                height:250,
+                colorDark:"#000000",
+                colorLight:"#ffffff",
+                correctLevel:QRCode.CorrectLevel.H
+            });
+
+            let myInput = document.querySelector("#myInput");
+            myInput.addEventListener("keyup",(e) =>{
+                let input = myInput.value;
+                qrcode.makeCode(input);
+            });
+
+            document.querySelector("#downloadBtn").onclick = () => {
+                let img = document.querySelector("#qrcode img");
+                let link = document.createElement('a');
+                link.href = img.src;
+                link.download = "Qrcode.jpeg";
+                link.click();
+            }
+        </script>
+    </body>
+</html>
+

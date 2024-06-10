@@ -13,6 +13,17 @@
         <link rel="stylesheet" href="">
         <script src="qrcode.js"></script> <!-- Using qrcode.js file -->
         <style>
+            * {
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+            }
+            body {
+                display:flex;
+                justify-content:center;
+                min-height:100vh;
+                align-items:center;
+            }
             input {
                 margin:20px;
                 padding:5px;
@@ -31,57 +42,59 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>QR Code generate</h1>
-        <input type="text" name="myInput" id="myInput" style="color:blue;"/>
-        <div id="qrcode"></div>
-        <button type="button" id="downloadBtn">Download</button>
-        <script type="text/javascript">
-            // var qrcode = new QRCode("qrcode", {
-            //     text: "",
-            //     width: 250,
-            //     height: 250,
-            //     colorDark : "#000000",
-            //     colorLight : "#ffffff",
-            //     correctLevel : QRCode.CorrectLevel.H
-            // });
-
-            // let myInput = document.querySelector("#myInput");
-            // myInput.addEventListener("keyup",(e) => {
-            //     console.log(e.key);
-            //     let input = myInput.value;
-            //     qrcode.makeCode(input);
-
-            // })
-            // document.querySelector("#downloadBtn").onclick = () => {
-            //     let img = document.querySelector("#qrcode img");
-            //     let link = document.createElement('a');
-            //     link.href = img.src;
-            //     link.download = "QrCode.png";
-            //     link.click();
-            // }
-            var qrcode = new QRCode("qrcode", {
-                text:"",
-                width:250,
-                height:250,
-                colorDark:"#000000",
-                colorLight:"#ffffff",
-                correctLevel:QRCode.CorrectLevel.H
-            });
-
-            let myInput = document.querySelector("#myInput");
-            myInput.addEventListener("keyup",(e) =>{
-                let input = myInput.value;
-                qrcode.makeCode(input);
-            });
-
-            document.querySelector("#downloadBtn").onclick = () => {
-                let img = document.querySelector("#qrcode img");
-                let link = document.createElement('a');
-                link.href = img.src;
-                link.download = "Qrcode.jpeg";
-                link.click();
-            }
-        </script>
+        <div>
+                <h1>QR Code generate</h1>
+                <input type="text" name="myInput" id="myInput" style="color:blue;"/>
+                <div id="qrcode"></div>
+                <button type="button" id="downloadBtn">Download</button>
+                <script type="text/javascript">
+                    // var qrcode = new QRCode("qrcode", {
+                    //     text: "",
+                    //     width: 250,
+                    //     height: 250,
+                    //     colorDark : "#000000",
+                    //     colorLight : "#ffffff",
+                    //     correctLevel : QRCode.CorrectLevel.H
+                    // });
+        
+                    // let myInput = document.querySelector("#myInput");
+                    // myInput.addEventListener("keyup",(e) => {
+                    //     console.log(e.key);
+                    //     let input = myInput.value;
+                    //     qrcode.makeCode(input);
+        
+                    // })
+                    // document.querySelector("#downloadBtn").onclick = () => {
+                    //     let img = document.querySelector("#qrcode img");
+                    //     let link = document.createElement('a');
+                    //     link.href = img.src;
+                    //     link.download = "QrCode.png";
+                    //     link.click();
+                    // }
+                    var qrcode = new QRCode("qrcode", {
+                        text:"",
+                        width:250,
+                        height:250,
+                        colorDark:"#000000",
+                        colorLight:"#ffffff",
+                        correctLevel:QRCode.CorrectLevel.H
+                    });
+        
+                    let myInput = document.querySelector("#myInput");
+                    myInput.addEventListener("keyup",(e) =>{
+                        let input = myInput.value;
+                        qrcode.makeCode(input);
+                    });
+        
+                    document.querySelector("#downloadBtn").onclick = () => {
+                        let img = document.querySelector("#qrcode img");
+                        let link = document.createElement('a');
+                        link.href = img.src;
+                        link.download = "Qrcode.jpeg";
+                        link.click();
+                    }
+                </script>
+        </div>
     </body>
 </html>
 

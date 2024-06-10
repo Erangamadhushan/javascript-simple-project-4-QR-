@@ -20,14 +20,13 @@ input {
     margin:20px;
     padding:5px;
     font-size:2rem;
+    color:blue;
 }
 #qrcode {
     margin-left:30px;
     
 }
-input{
-    color:red;
-}
+
 button{
     margin:20px;
     padding:10px;

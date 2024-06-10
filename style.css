@@ -32,11 +32,13 @@ input {
 
 button{
     margin:20px;
+    display:none;
     padding:10px;
     border-radius:8px;
     background-color:#2196f3;
     border:none;
     color:#ffffff;
+    cursor:
 }
 button:hover {
     background-color: #0b7dda;

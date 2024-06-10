@@ -41,7 +41,11 @@
                 padding:10px;
                 border-radius:8px;
                 background-color:#2196f3;
+                border:none;
                 color:#ffffff;
+            }
+            button:hover {
+                background-color: #0b7dda;
             }
         </style>
     </head>
@@ -53,7 +57,7 @@
                 <h1>QR Code generate</h1>
                 <input type="text" name="myInput" id="myInput" style="color:blue;"/>
                 <div id="qrcode"></div>
-                <button type="button" id="downloadBtn">Download</button>
+                <button type="button" id="downloadBtn">Download Png</button>
                 <script type="text/javascript">
                     // var qrcode = new QRCode("qrcode", {
                     //     text: "",
